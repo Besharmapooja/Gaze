@@ -1,0 +1,56 @@
+# Gaze
+
+import tkinter as tk
+
+def create_grid(event=None):
+    w = c.winfo_width() # Get current width of canvas
+    h = c.winfo_height() # Get current height of canvas
+    c.delete('grid_line') # Will only remove the grid_line
+
+    # Creates all vertical lines at intevals of 100
+    for i in range(0, w,int(w/3)):
+        c.create_line([(i, 0), (i, h)], tag='grid_line')
+
+    # Creates all horizontal lines at intevals of 100
+    for i in range(0, h, int(h/3)):
+        c.create_line([(0, i), (w, i)], tag='grid_line')
+
+    l1 = tk.Label(root, text='1', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l2 = tk.Label(root, text='2', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l3 = tk.Label(root, text='3', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l4 = tk.Label(root, text='4', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l5 = tk.Label(root, text='5', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l6 = tk.Label(root, text='6', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l7 = tk.Label(root, text='7', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l8 = tk.Label(root, text='8', font=("Arial Bold", 50),bg="cyan", fg="black")
+    l9 = tk.Label(root, text='9', font=("Arial Bold", 50),bg="cyan", fg="black")
+    
+    l1.place(x=130,y=80)
+    l2.place(x=490,y=80)
+    l3.place(x=800,y=80)
+    l4.place(x=130,y=300)
+    l5.place(x=490,y=300)
+    l6.place(x=800,y=300)
+    l7.place(x=130,y=520)
+    l8.place(x=490,y=520)
+    l9.place(x=800,y=520)
+    
+root = tk.Tk()
+c = tk.Canvas(root, height=999, width=999, bg='cyan')
+l1=tk.Label(root,text="Gaze at your first pin digit",font=("Arial Bold",25));
+c.pack(fill=tk.BOTH, expand=True)
+l1.place(x=490,y=300)
+#c.bind('<Configure>', create_grid)
+root.mainloop()
+root = tk.Tk()
+c = tk.Canvas(root, height=999, width=999, bg='cyan')
+c.pack(fill=tk.BOTH, expand=True)
+c.bind('<Configure>', create_grid)
+root.mainloop()
+root = tk.Tk()
+c = tk.Canvas(root, height=999, width=999, bg='cyan')
+l1=tk.Label(root,text="Gaze at your second digit",font=("Arial Bold",25));
+c.pack(fill=tk.BOTH, expand=True)
+l1.place(x=490,y=300)
+#c.bind('<Configure>', create_grid)
+root.mainloop()
