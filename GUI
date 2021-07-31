@@ -1,0 +1,12 @@
+# Gaze
+Gaze based pin authentication
+import tkinter
+root = tkinter.Tk(  )
+i=1
+for r in range(3):
+   for c in range(3):
+      tkinter.Label(root, text=i,
+         borderwidth=1 ).grid(row=r,column=c)
+      i=i+1
+   
+root.mainloop(  )
